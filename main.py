@@ -108,6 +108,8 @@ class Application(tk.Frame):
         self.settings_button = tk.Button(self, text=labels['settings_button'], command=self.open_settings)
         self.settings_button.pack()
 
+        self.quit_button = tk.Button(self, text=labels['quit_button'], fg="red", command=self.master.destroy)
+        self.quit_button.pack()
 
     def update_movie_list(self, event):
         title_start = self.title_entry.get()
@@ -212,7 +214,7 @@ class Application(tk.Frame):
         self.watch_button.config(text=labels['add_button'])
         self.recommend_button.config(text=labels['recommend_button'])
         self.settings_button.config(text=labels['settings_button'])
-
+        self.quit_button.config(text=labels['quit_button'])
 
 root = tk.Tk()
 root.title("movie recommender")
